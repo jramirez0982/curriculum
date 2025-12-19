@@ -1,0 +1,164 @@
+body {
+  background-color: white;/*azure*/
+  padding-top: 80px
+}
+
+.nav-difuminado {
+  /* ... tus estilos de color, padding, etc. */
+  background-color: #ADD8E6; 
+  padding: 15px;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* PROPIEDADES PARA FIJAR EL NAVBAR */
+  position: fixed; /* Fija la barra en el viewport */
+  top: 0;          /* La ancla a la parte superior */
+  padding: 15px;     /* Asegura que cubra todo el ancho */
+  z-index: 1000;   /* Mantiene el nav por encima de otros elementos */
+}
+
+.nav-link:hover {
+    text-decoration: underline; /* Subrayado SÓLO al pasar el ratón */
+}
+
+.border-custom-light-blue {
+  border-color: rgba(173, 216, 230, 0.5) !important;
+}
+
+.card-elevable {
+    /* 1. Estilo base (sombra sutil para darle profundidad inicial) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    
+    /* 2. Añade transición para que el cambio sea suave */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+.card-elevable:hover {
+    /* 3. Aumenta la elevación (lo mueve ligeramente hacia arriba) */
+    transform: translateY(-8px); 
+    
+    /* 4. Aumenta la sombra para el efecto de "sobresalir" */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+html { 
+  scroll-padding-top: 80px; 
+  scroll-behavior: smooth;  
+  
+}
+
+.logo-contenedor {
+    /* Altura fija para el espacio del logo. AJUSTA este valor (ej: 80px) */
+    height: 100%; 
+    
+    /* Centra el contenido (la imagen) horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta si la imagen es demasiado grande */
+}
+
+/* 2. Reglas para la imagen real dentro del contenedor */
+.logo-imagen {
+    /* Asegura que la imagen no exceda el tamaño del contenedor */
+    max-width: 100%;
+    max-height: 100%;
+    
+    /* ✨ CLAVE: Escala la imagen para que quepa completamente sin ser cortada. */
+    /* Usa 'cover' si quieres que la imagen llene el espacio, recortando los bordes. */
+    object-fit: contain; 
+}
+
+.logo-ajustado {
+    /* ✨ CLAVE: Le permite a la imagen encogerse hasta el 100% de la altura de su padre. */
+    max-height: 100%;
+    
+    /* Le permite a la imagen encogerse hasta el 100% del ancho de su padre. */
+    max-width: 100%; 
+    
+    /* ✨ CLAVE: Escala la imagen para que quepa completamente en el espacio, manteniendo su proporción. */
+    /* No cortará la imagen, pero puede dejar espacio en blanco si la proporción es muy diferente. */
+    object-fit: contain; 
+}
+
+
+/* 1. Dibujar la Línea Vertical */
+.timeline-area {
+    /* La posición relativa es necesaria para posicionar el pseudo-elemento */
+    position: relative;
+    padding: 0 15px; /* Espaciado interno */
+}
+
+.timeline-area::before {
+    content: '';
+    position: absolute;
+    /* Dibuja la línea en el centro horizontal (50% menos la mitad del ancho de la línea) */
+    left: calc(50% - 1.5px); 
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #a8bfd4; /* Color gris claro de Bootstrap */
+    z-index: 0; /* Asegura que la línea esté detrás de las tarjetas */
+}
+
+/* 2. Estilos para las Tarjetas */
+.timeline-card {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa; /* Fondo claro de Bootstrap */
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* 3. Ajuste Responsive y Orientación */
+@media (min-width: 768px) {
+    
+    /* Mueve la tarjeta de la izquierda hacia la línea central */
+    .timeline-left {
+        padding-right: 35px; /* Crea espacio para el conector */
+    }
+    
+    /* Mueve la tarjeta de la derecha hacia la línea central */
+    .timeline-right {
+        padding-left: 35px; /* Crea espacio para el conector */
+    }
+
+    /* Opcional: Centrar el texto en la parte izquierda */
+    .timeline-left .timeline-card {
+        text-align: right;
+    }
+}
+
+/* 1. Regla para todos los contenedores de lado (asegura que el círculo solo se pegue a esta columna) */
+.timeline-left, 
+.timeline-right {
+    position: relative; /* Asegura que el ::after se posicione correctamente */
+}
+
+/* 2. Regla Específica para dibujar el Círculo */
+/* ¡IMPORTANTE! Solo aplica ::after a los DIVs de la columna (timeline-left/right) */
+.timeline-left::after,
+.timeline-right::after {
+    content: '';
+    position: absolute;
+    width: 14px; 
+    height: 14px;
+    border-radius: 50%; 
+    background-color: rgb(248, 248, 248); 
+    border: 3px solid #4459cf; 
+    z-index: 1; 
+    top: 25px; /* Ajuste vertical */
+}
+
+/* 3. Posicionamiento del Lado Izquierdo */
+.timeline-left::after {
+    right: -7px; 
+    left: auto; /* Asegura que no haya conflicto con la regla del lado derecho */
+}
+
+/* 4. Posicionamiento del Lado Derecho */
+.timeline-right::after {
+    left: -7px; 
+    right: auto; /* Asegura que no haya conflicto con la regla del lado izquierdo */
+}
