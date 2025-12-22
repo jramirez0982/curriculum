@@ -1,6 +1,30 @@
-import React, { useEffect } from "react"
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import rigoImageUrl from "../assets/img/rigo-baby.jpg";
 import julianRamirez from "../assets/img/julian-ramirez.png";
+import logoUtel from "../assets/img/logo-universidad-utel1.jpeg"
+import logoUpb from "../assets/img/upb-logo.png"
+import logoEsumer from "../assets/img/logo-esumer.jpeg"
+import logoUnal from "../assets/img/unal-logo.jpg"
+import logoHtml from "../assets/img/logo-html-color.png"
+import logoJavaScript from "../assets/img/logo-js-color.png"
+import logoMySQL from "../assets/img/logo-mysql-color.png"
+import logoPython from "../assets/img/logo-python-color.png"
+import logoReact from "../assets/img/logo-react.png"
+import logoFlask from "../assets/img/logo-flask.png"
+import logoPostman from "../assets/img/logo-postman-color.png"
+import logoMatlab from "../assets/img/logo-matlab-color.png"
+import logoCss from "../assets/img/logo-css-color.png"
+import logoBootstrap from "../assets/img/logo-bootstrap-color.png"
+import logoDjango from "../assets/img/logo-django-color.png"
+import logoSQLite from "../assets/img/logo-SQlite-color.png"
+import logoGithub from "../assets/img/logo-git-color.png"
+import geeks from "../assets/img/full-stack-4geeks.png"
+import Scrum from "../assets/img/scrum-master.png"
+import ProductOwner from "../assets/img/productowner.png"
+import Kanban from "../assets/img/kanban.png"
+
+
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { EstudiosCard } from "../components/EstudiosCard.jsx";
 import { HabilidadesCard } from "../components/HabilidadesCard.jsx";
@@ -11,13 +35,15 @@ export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
 
-	
+
+
+
 	const estudiosFormales = [
 		{
 			Titulo: "Magister en Ciencias Computacionales",
 			Universidad: "Universidad Utel",
 			lugar: "Ciudad de Mexico, Mexico",
-			ImagenLogo: "src/assets/img/logo-universidad-utel1.jpeg",
+			ImagenLogo: logoUtel,
 			fecha: "Enero de 2023"
 		},
 
@@ -25,7 +51,7 @@ export const Home = () => {
 			Titulo: "Especialista en Automática",
 			Universidad: "Universidad Pontificia Bolivariana",
 			lugar: "Medellín, Colombia",
-			ImagenLogo: "src/assets/img/upb-logo.png",
+			ImagenLogo: logoUpb,
 			fecha: "Marzo de 2018"
 		},
 
@@ -33,7 +59,7 @@ export const Home = () => {
 			Titulo: "Especialista en Gerencia de Proyectos",
 			Universidad: "Universidad Esumer",
 			lugar: "Medellín Colombia",
-			ImagenLogo: "src/assets/img/logo-esumer.jpeg",
+			ImagenLogo: logoEsumer,
 			fecha: "Marzo de 2012"
 		},
 
@@ -41,7 +67,7 @@ export const Home = () => {
 			Titulo: "Ingeniero Electrónico",
 			Universidad: "Universidad Nacional de Colombia",
 			lugar: "Manizales, Colombia",
-			ImagenLogo: "src/assets/img/unal-logo.jpg",
+			ImagenLogo: logoUnal,
 			fecha: "Agosto de 2005"
 
 		}
@@ -51,68 +77,68 @@ export const Home = () => {
 	const habilidades = [
 		{
 			habilidad: "HTML",
-			logo: "src/assets/img/logo-html-color.png",
+			logo: logoHtml,
 		},
 
 		{
 			habilidad: "JavaScript",
-			logo: "src/assets/img/logo-js-color.png",
+			logo: logoJavaScript,
 		},
 
 		{
 			habilidad: "MySQL",
-			logo: "src/assets/img/logo-mysql-color.png",
+			logo: logoMySQL,
 		},
 
 		{
 			habilidad: "Python",
-			logo: "src/assets/img/logo-python-color.png",
+			logo: logoPython,
 		},
 
 		{
 			habilidad: "React",
-			logo: "src/assets/img/logo-react.png",
+			logo: logoReact,
 		},
 
 		{
 			habilidad: "Flask",
-			logo: "src/assets/img/logo-flask.png",
+			logo: logoFlask,
 		},
 
 		{
 			habilidad: "Postman",
-			logo: "src/assets/img/logo-postman-color.png",
+			logo: logoPostman,
 		},
 
 
 		{
 			habilidad: "Matlab",
-			logo: "src/assets/img/logo-matlab-color.png",
+			logo: logoMatlab,
 		},
 
 		{
 			habilidad: "CSS",
-			logo: "src/assets/img/logo-css-color.png",
+			logo: logoCss,
 		},
 
 		{
 			habilidad: "Bootstrap",
-			logo: "src/assets/img/logo-bootstrap-color.png",
+			logo: logoBootstrap,
 		},
 
 		{
 			habilidad: "Django",
-			logo: "src/assets/img/logo-django-color.png",
+			logo: logoDjango,
 		},
 
 		{
 			habilidad: "SQLite",
-			logo: "src/assets/img/logo-SQlite-color.png",
+			logo: logoSQLite,
 		},
 
 		{
 			habilidad: "Git & GitHub",
-			logo: "src/assets/img/logo-git-color.png",
+			logo: logoGithub,
 		},
 
 	]
@@ -123,7 +149,7 @@ export const Home = () => {
 			nombreCertificacion: "Desarrollador Full Stack",
 			fecha: "Agosto de 2025",
 			enteCertificador: "4Geeks Academy",
-			logo: "src/assets/img/full-stack-4geeks.png"
+			logo: geeks
 		},
 
 
@@ -131,7 +157,7 @@ export const Home = () => {
 			nombreCertificacion: "Scrum Master Professional Certificate",
 			fecha: "2021",
 			enteCertificador: "CertiProf",
-			logo: "src/assets/img/scrum-master.png"
+			logo: Scrum
 		},
 
 
@@ -139,7 +165,7 @@ export const Home = () => {
 			nombreCertificacion: "Scrum Product Owner Professional Certificate",
 			fecha: "2020",
 			enteCertificador: "CertiProf",
-			logo: "src/assets/img/productowner.png"
+			logo: ProductOwner
 		},
 
 
@@ -147,7 +173,7 @@ export const Home = () => {
 			nombreCertificacion: "Kanban Essentials Professional Certificate",
 			fecha: "2020",
 			enteCertificador: "Certiprof",
-			logo: "src/assets/img/kanban.png"
+			logo: Kanban
 		}
 	]
 
@@ -159,7 +185,7 @@ export const Home = () => {
 			<div className="text-center mt-5 pt-2">
 
 				{/* Contenedor principal para centrar la fila horizontalmente */}
-				<div className="d-flex justify-content-center border border-3 rounded-5 mx-5 border-custom-light-blue">
+				<div id="perfil" className="d-flex justify-content-center border border-3 rounded-5 mx-5 border-custom-light-blue">
 					{/* Contenedor de la imagen y el texto: usamos d-flex para que estén lado a lado */}
 					{/* Usamos 'align-items-center' para alinearlos verticalmente al centro (opcional) */}
 					{/* Se usa 'col-lg-8' o un tamaño similar para limitar el ancho del contenido y mantener el centrado */}
@@ -175,7 +201,7 @@ export const Home = () => {
 						</div>
 
 						<div>
-							<div id="perfil" className="fs-4 text-start fw-bold fst-italic">
+							<div className="fs-4 text-start fw-bold fst-italic">
 								Perfil
 							</div>
 							{/* Contenedor del Texto (Lorem) */}
@@ -274,8 +300,8 @@ export const Home = () => {
 						<div className="row timeline-area">
 
 							{/* =======================================================
-        Punto 1: Evento a la Izquierda 
-        ======================================================= */}
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														        Punto 1: Evento a la Izquierda 
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																        ======================================================= */}
 							<div className="col-12 col-md-6 timeline-left">
 								<div className="timeline-card">
 									<h3>Jefe de Operaciones</h3>
@@ -305,8 +331,8 @@ export const Home = () => {
 
 
 							{/* =======================================================
-        Punto 2: Evento a la Derecha 
-        ======================================================= */}
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																        Punto 2: Evento a la Derecha 
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		        ======================================================= */}
 							<div className="col-md-6 d-none d-md-block"></div> {/* Columna vacía */}
 
 							<div className="col-12 col-md-6">
@@ -337,8 +363,8 @@ export const Home = () => {
 
 
 							{/* =======================================================
-        Punto 3: Evento a la Izquierda 
-        ======================================================= */}
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		        Punto 3: Evento a la Izquierda 
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				        ======================================================= */}
 							<div className="col-12 col-md-6 timeline-left">
 								<div className="timeline-card">
 									<h3>Superintendente Técnico</h3>

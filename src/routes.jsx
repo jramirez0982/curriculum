@@ -4,6 +4,7 @@ import {
     createBrowserRouter,
     createRoutesFromElements,
     Route,
+    HashRouter, Routes, createHashRouter,
 } from "react-router-dom";
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
@@ -11,7 +12,7 @@ import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
 import { Blog } from "./pages/Blog";
 
-export const router = createBrowserRouter(
+export const router = createHashRouter(
     createRoutesFromElements(
     // CreateRoutesFromElements function allows you to build route elements declaratively.
     // Create your routes here, if you want to keep the Navbar and Footer in all views, add your new routes inside the containing Route.
@@ -28,5 +29,7 @@ export const router = createBrowserRouter(
         <Route path="/demo" element={<Demo />} />
         <Route path="/blog" element={<Blog />} />
       </Route>
-    )
+      
+    ),
+    
 );
