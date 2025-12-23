@@ -249,7 +249,7 @@ export const Home = () => {
 							{
 								habilidades.map((habilidades, index) => {
 									return (
-										<div className="col-12 col-md-3 col-lg-2 m-0 p-0">
+										<div className="row g-0 col-12 col-md-3 col-lg-2 m-0 p-0 justify-content-center">
 											<HabilidadesCard habilidad={habilidades.habilidad} logo={habilidades.logo} />
 										</div>
 									)
