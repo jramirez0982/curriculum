@@ -282,9 +282,6 @@ export const Home = () => {
 							}
 						</div>
 					</div>
-
-
-
 				</div>
 
 
@@ -293,15 +290,12 @@ export const Home = () => {
 						Experiencia laboral
 					</div>
 
-
 					<div className="container py-5">
-
 						{/* La clase 'timeline-area' aplicará el CSS para la línea vertical */}
 						<div className="row timeline-area">
 
-							{/* =======================================================
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														        Punto 1: Evento a la Izquierda 
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																        ======================================================= */}
+							{/*Punto 1: Evento a la Izquierda*/} 
+												
 							<div className="col-12 col-md-6 timeline-left">
 								<div className="timeline-card">
 									<h3>Jefe de Operaciones</h3>
@@ -330,9 +324,7 @@ export const Home = () => {
 							<div className="col-md-6 d-none d-md-block"></div>
 
 
-							{/* =======================================================
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																        Punto 2: Evento a la Derecha 
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		        ======================================================= */}
+							{/* Punto 2: Evento a la Derecha */}
 							<div className="col-md-6 d-none d-md-block"></div> {/* Columna vacía */}
 
 							<div className="col-12 col-md-6 timeline-right">
@@ -360,10 +352,7 @@ export const Home = () => {
 							</div>
 
 							{/* Repite esta estructura para cada evento (Izquierda/Derecha) */}
-
-
-							{/* =======================================================
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		        Punto 3: Evento a la Izquierda 
+							{/*Punto 3: Evento a la Izquierda*/} 
 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				        ======================================================= */}
 							<div className="col-12 col-md-6 timeline-left">
 								<div className="timeline-card">
@@ -388,9 +377,6 @@ export const Home = () => {
 
 							{/* Columna vacía que actúa como separador en móviles */}
 							<div className="col-md-6 d-none d-md-block"></div>
-
-
-
 
 						</div>
 					</div>
