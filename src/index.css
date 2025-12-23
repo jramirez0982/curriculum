@@ -81,76 +81,72 @@ html {
     object-fit: contain; 
 }
 
-/* --- ESTILOS BASE (MÓVIL) --- */
 
+/* 1. Estilos base para móviles (SIN LÍNEA NI CÍRCULOS) */
 .timeline-area {
     position: relative;
     padding: 0 15px;
 }
 
-/* La línea NO existe en móvil, se define dentro del media query abajo */
-
 .timeline-card {
     position: relative;
     padding: 20px;
-    margin-bottom: 30px; /* Un poco más de espacio entre bloques en móvil */
+    margin-bottom: 20px;
     background-color: #f8f9fa;
     border-radius: 0.5rem;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    text-align: left; /* Siempre a la izquierda en móvil */
+    text-align: left; /* En móvil, todo alineado a la izquierda */
 }
 
-/* --- ESTILOS PARA ESCRITORIO (A partir de 768px) --- */
-
+/* 2. Estilos para Escritorio (768px en adelante) */
 @media (min-width: 768px) {
-    
-    /* Dibujamos la línea solo en pantallas grandes */
+
+    /* DIBUJAR LA LÍNEA */
     .timeline-area::before {
         content: '';
         position: absolute;
-        left: calc(50% - 1.5px);
+        /* Forzamos que se ubique en el centro exacto del contenedor */
+        left: 50%;
+        transform: translateX(-50%); 
         top: 0;
         width: 3px;
         height: 100%;
         background-color: #a8bfd4;
-        z-index: 0;
+        /* Un z-index bajo para que esté al fondo */
+        z-index: 1; 
     }
 
-    /* Espaciados para que el texto no toque la línea */
-    .timeline-left {
-        padding-right: 45px;
-    }
-    
+    /* CONTENEDORES DE LAS TARJETAS */
+    .timeline-left, 
     .timeline-right {
-        padding-left: 45px;
+        position: relative;
+        z-index: 2; /* Para que las tarjetas y círculos estén sobre la línea */
+        margin-bottom: 20px;
     }
 
-    /* Alineación alterna */
-    .timeline-left .timeline-card {
-        text-align: right;
-    }
+    .timeline-left { padding-right: 40px; }
+    .timeline-right { padding-left: 40px; }
 
-    /* Dibujamos los círculos solo en pantallas grandes */
+    /* CÍRCULOS */
     .timeline-left::after,
     .timeline-right::after {
         content: '';
         position: absolute;
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
-        background-color: #f8f9fa;
+        background-color: #f8f9fa; /* Color de fondo de la tarjeta o blanco */
         border: 3px solid #4459cf;
-        z-index: 1;
         top: 25px;
+        z-index: 3; /* El nivel más alto para tapar la línea */
     }
 
+    /* Ubicación exacta del círculo sobre la línea central */
     .timeline-left::after {
-        right: -7px;
-        left: auto;
+        right: -8px; /* Mitad del ancho del círculo (16px / 2) */
     }
 
     .timeline-right::after {
-        left: -7px;
-        right: auto;
+        left: -8px; /* Mitad del ancho del círculo (16px / 2) */
     }
 }

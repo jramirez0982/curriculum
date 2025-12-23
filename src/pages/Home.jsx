@@ -292,7 +292,7 @@ export const Home = () => {
 
 					<div className="container py-5">
 						{/* La clase 'timeline-area' aplicará el CSS para la línea vertical */}
-						<div className="row timeline-area">
+						<div className="row timeline-area gx-2 gx-md-4">
 
 							{/*Punto 1: Evento a la Izquierda*/} 
 												
@@ -325,7 +325,7 @@ export const Home = () => {
 
 
 							{/* Punto 2: Evento a la Derecha */}
-							<div className="col-md-6 d-none d-md-block"></div> {/* Columna vacía */}
+							<div className="col-md-6 d-none d-md-block"></div>
 
 							<div className="col-12 col-md-6 timeline-right">
 								<div className="timeline-card  text-start">
@@ -353,7 +353,8 @@ export const Home = () => {
 
 							{/* Repite esta estructura para cada evento (Izquierda/Derecha) */}
 							{/*Punto 3: Evento a la Izquierda*/} 
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				        ======================================================= */}
+							
+
 							<div className="col-12 col-md-6 timeline-left">
 								<div className="timeline-card">
 									<h3>Superintendente Técnico</h3>
