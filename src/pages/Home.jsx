@@ -335,7 +335,7 @@ export const Home = () => {
 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		        ======================================================= */}
 							<div className="col-md-6 d-none d-md-block"></div> {/* Columna vacía */}
 
-							<div className="col-12 col-md-6">
+							<div className="col-12 col-md-6 timeline-right">
 								<div className="timeline-card  text-start">
 									<h3>Ingeneiro de Proyectos</h3>
 									<h5>Aeronautica Civil de Colombia</h5>
