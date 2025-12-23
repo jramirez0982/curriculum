@@ -85,10 +85,13 @@ html {
 /* 1. Estilos base para móviles (SIN LÍNEA NI CÍRCULOS) */
 .timeline-area {
     position: relative;
-    padding: 0 15px;
+    padding: 0 0px;
 }
 
 .timeline-card {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
     position: relative;
     padding: 20px;
     margin-bottom: 20px;
